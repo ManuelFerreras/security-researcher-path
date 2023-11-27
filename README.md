@@ -29,3 +29,10 @@
 #### <u>Nov. 22, 2023</u>
 
 - Started learning about Blockchain Security and Smart Contract Auditing, starting with [Owen's Thurm security course](https://www.youtube.com/watch?v=DRZogmD647U&t=2s).
+<br>
+
+#### <u>Nov. 26, 2023</u>
+
+- After diving into the most of Owen's video and having in mind some consideration, I've made my first [audit](https://www.codehawks.com/contests/clnuo221v0001l50aomgo4nyn) on CodeHawks. Found 2 vulnerabilities which are described under:
+  - 'src/Audits/CodeHawks/First Flights/First Flights #1: PasswordStore/audit.md'
+<br>
