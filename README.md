@@ -33,6 +33,11 @@
 
 #### <u>Nov. 26, 2023</u>
 
-- After diving into the most of Owen's video and having in mind some consideration, I've made my first [audit](https://www.codehawks.com/contests/clnuo221v0001l50aomgo4nyn) on CodeHawks. Found 2 vulnerabilities which are described under:
-  - 'src/Audits/CodeHawks/First Flights/First Flights #1: PasswordStore/audit.md'
+- After diving into the most of Owen's video and having in mind some consideration, I've made my first [audit](https://www.codehawks.com/contests/clnuo221v0001l50aomgo4nyn) on CodeHawks. Found 2 vulnerabilities which are described [here](https://github.com/ManuelFerreras/security-researcher-path/blob/main/Audits/CodeHawks/First%20Flights/First%20Flights%20%231%3A%20PasswordStore/audit.md).
+<br>
+
+- Also I've gone through the First Flight #2 code base and marked some important things in the code.
+<br>
+
+- I'm still with the First Part of the 2 videos course.
 <br>
