@@ -41,3 +41,8 @@
 
 - I'm still with the First Part of the 2 videos course.
 <br>
+
+#### <u>Nov. 27, 2023</u>
+
+- Finished Auditing the First Flight #2 code base. Found 5 vulnerabilities which are described [here](https://github.com/ManuelFerreras/security-researcher-path/blob/main/Audits/CodeHawks/First%20Flights/First%20Flight%20%232%3A%20Puppy%20Raffle/audit.md)
+<br>

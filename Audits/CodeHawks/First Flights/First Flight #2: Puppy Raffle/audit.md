@@ -3,19 +3,19 @@
 
 ## Goals
 
-- [ ] Check that duplicated addresses can only participate once.
+- [x] Check that duplicated addresses can only participate once.
 <br>
 
-- [ ] Check all variables are well used and unchanged variables remain immutable.
+- [x] Check all variables are well used and unchanged variables remain immutable.
 <br>
 
-- [ ] Check the refund logic. Special attention to where the funds come from, conditions of refund, and that it is not reentrant.
+- [x] Check the refund logic. Special attention to where the funds come from, conditions of refund, and that it is not reentrant.
 <br>
 
-- [ ] Check that fee address can only be set by the owner.
+- [x] Check that fee address can only be set by the owner.
 <br>
 
-- [ ] Check that there are enough funds for any refunds, prices and fees.
+- [x] Check that there are enough funds for any refunds, prices and fees. Also that there is no case where the owner cant withdraw fees.
 <br>
 
 ## Notes
@@ -82,8 +82,36 @@
 - PuppyRaffle::raffleDuration can be set to immutable.
 <br>
 
-- PuppyRaffle::totalFees can have an overflow.
+- PuppyRaffle::tokenIdToRarity ; PuppyRaffle::rarityToUri ; PuppyRaffle::rarityToName can be packed into a single mapping by creating a rarity struct.
+<br>
+
+- PuppyRaffle::totalFees can have an overflow. We should consider using uint256 instead of uint64.
 <br>
 
 - PuppyRaffle::refund is a reentrant function.
 <br>
+
+- PuppyRaffle::getActivePlayerIndex , player in position 0 can be confused as an inactive player.
+<br>
+
+- PuppyRaffle::selectWinner , as anyonce can call this function and its winner and rarity are determined by onchain data, anyone could call this function when they know that they will be the winner or that a certain rarity will be given. Making this only callable by the owner would still be a bad idea since an attacker can read the mempool and know right before the owner calls the function wether they will be the winner. If they are not, they can refund their ticket and make a risk-free raffle.
+<br>
+
+- PuppyRaffle::tokenURI can be uploaded to IPFS to save gas.
+<br>
+
+- PuppyRaffle::selectWinner will never be used. We can remove it to save deployment gas.
+<br>
+
+- PuppyRaffle::withdrawFees can easily be blocked by another user by sending an insignificant amount of ether to the contract. Since the balance of the contract will never match the totalFees, the owner will never be able to withdrawFees.
+<br>
+
+## Post Audit Notes
+
+- Always question where the funds come from when sending to an address.
+<br>
+
+- Always question how much funds are left when making a move and check if there can be a case where there are not enough funds.
+<br>
+
+- Always question where the funds go when sending to an address. Avoid address(0) and handle cases where the desired address can't receive funds.

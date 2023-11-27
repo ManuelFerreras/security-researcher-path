@@ -85,7 +85,6 @@ contract PuppyRaffle is ERC721, Ownable {
             players.push(newPlayers[i]);
         }
 
-        // @audit can we check this before pushing the player to lower the gas cost?
         // Check for duplicates
         for (uint256 i = 0; i < players.length - 1; i++) {
             for (uint256 j = i + 1; j < players.length; j++) {
